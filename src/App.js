@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar'
+import { Switch, Route } from 'react-router-dom'
+
+import UseStateComponent from './components/UseStateComponent'
+import UseEffectComponet from './components/UseEffectComponent'
+
+
 
 function App() {
+  // Declare a new state variable, which we'll call "count"
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+
+      <Switch>
+        <Route exact path="/use-state-component" component={UseStateComponent} />
+        <Route exact path="/use-effect-component" component={UseEffectComponet} />
+      </Switch>
+
     </div>
   );
 }
